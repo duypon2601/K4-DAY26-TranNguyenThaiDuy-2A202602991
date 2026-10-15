@@ -95,6 +95,7 @@ In `weather_agent/agent.py`:
 
 ```python
 MCP_SERVER_URL = os.getenv("MCP_SERVER_URL", "http://localhost:8085/mcp")
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-flash-latest")
 
 connection_params = StreamableHTTPConnectionParams(
     url=MCP_SERVER_URL,
@@ -103,7 +104,7 @@ connection_params = StreamableHTTPConnectionParams(
 
 root_agent = Agent(
     name="weather_agent",
-    model="gemini-3.5-flash",
+    model=GEMINI_MODEL,
     tools=[weather_tools],
 )
 ```

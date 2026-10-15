@@ -9,12 +9,15 @@ Cách chạy:
     python weather_function_calling.py
 """
 
+import os
+
 from google import genai
 from google.genai import types
 
 client = genai.Client()
 
-MODEL = "gemini-3.5-flash"
+# Model quá tải (503) thì đặt GEMINI_MODEL, ví dụ: export GEMINI_MODEL=gemini-3.8-flash
+MODEL = os.getenv("GEMINI_MODEL", "gemini-flash-latest")
 
 SYSTEM_INSTRUCTION = (
     "Bạn là trợ lý thời tiết thân thiện, trả lời bằng tiếng Việt tự nhiên. "

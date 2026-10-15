@@ -33,7 +33,7 @@ ADK (Agent Development Kit) đóng vai trò **MCP Client**
 │     → nhận về: get_current_weather, get_forecast, health_check  │
 │                                                                 │
 │  3. TRUYỀN tools cho LLM (Gemini)                               │
-│     Agent(model="gemini-3.5-flash", tools=[weather_tools])      │
+│     Agent(model=GEMINI_MODEL, tools=[weather_tools])            │
 │     → Gemini biết nó có thể gọi 3 tools trên                    │
 │                                                                 │
 │  4. ĐIỀU PHỐI vòng lặp Function Calling                         │
@@ -86,5 +86,6 @@ Open http://localhost:8000 in your browser, select `weather_agent`, and ask abou
 |----------|-------|-------------|
 | `WEATHERAPI_KEY` | mcp-server | API key from weatherapi.com |
 | `GOOGLE_API_KEY` | mcp-client/.env | Gemini API key |
+| `GEMINI_MODEL` | mcp-client/.env | Gemini model (default: `gemini-flash-latest`; switch to e.g. `gemini-3.8-flash` on 503/429 errors) |
 | `PORT` | mcp-server (env) | Override server port (default: 8085) |
 | `MCP_SERVER_URL` | mcp-client/.env | MCP endpoint the agent connects to (default: `http://localhost:8085/mcp`; set to your Cloud Run URL + `/mcp` when deployed) |

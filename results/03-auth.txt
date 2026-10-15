@@ -1,0 +1,8 @@
+Tools (có auth):
+  - get_weather: Lấy thời tiết hiện tại của một thành phố.
+
+Kết quả: Hanoi: 29°C, trời mưa
+
+# Kiểm tra từ chối truy cập (curl POST /mcp)
+Không có token -> HTTP 401
+Token sai      -> HTTP 401
